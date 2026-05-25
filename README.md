@@ -10,34 +10,106 @@ Designed with clean architecture, scalable backend structure, and an intuitive u
 
 ✅ Full CRUD Functionality  
 ✅ RESTful Backend Architecture  
-✅ Clean UI & Responsive Design  
-✅ Database Integration using MySQL  
 ✅ MVC-Based Project Structure  
-✅ Beginner-Friendly Yet Industry-Relevant Project
+✅ Responsive User Interface  
+✅ Database Integration with MySQL  
+✅ Beginner-Friendly & Industry-Relevant Project  
+
+---
+
+## 🏗️ Architecture
+
+```text
+┌─────────────────────────────────────────────────────┐
+│                   CLIENT (Browser)                  │
+│             HTML + CSS + Thymeleaf                  │
+└────────────────────────┬────────────────────────────┘
+                         │ HTTP Requests
+┌────────────────────────▼────────────────────────────┐
+│              SPRING BOOT APPLICATION                │
+│                                                     │
+│   ┌──────────────┐    ┌──────────────┐              │
+│   │  Controller  │───▶│   Service    │              │
+│   │   (Routes)   │    │ (Business    │              │
+│   └──────────────┘    │   Logic)     │              │
+│                        └──────┬───────┘              │
+│                               │                      │
+│                        ┌──────▼───────┐              │
+│                        │  Repository  │              │
+│                        │ (Spring JPA) │              │
+│                        └──────┬───────┘              │
+└───────────────────────────────┼──────────────────────┘
+                                │
+┌───────────────────────────────▼──────────────────────┐
+│                  MYSQL DATABASE                      │
+│             students • courses • records             │
+└──────────────────────────────────────────────────────┘
+```
+
+---
+
+## 🧩 Project Structure
+
+```text
+Student-Management-System/
+│
+├── .idea/                          # IntelliJ IDEA config
+│
+└── Student-management-system/
+    │
+    ├── src/
+    │   └── main/
+    │       ├── java/
+    │       │   └── com/example/sms/
+    │       │       ├── controller/      # HTTP request handlers
+    │       │       ├── model/           # Entity/data models
+    │       │       ├── repository/      # Database access layer
+    │       │       ├── service/         # Business logic
+    │       │       └── Application.java # Main entry point
+    │       │
+    │       └── resources/
+    │           ├── templates/           # Thymeleaf views
+    │           ├── static/              # CSS, JS, Images
+    │           └── application.properties
+    │
+    └── pom.xml                          # Maven configuration
+```
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Technology | Usage |
-|------------|-------|
-| Java | Core Backend Logic |
-| Spring Boot | Backend Framework |
-| MySQL | Database |
-| HTML/CSS | Frontend UI |
-| Bootstrap | Responsive Design |
-| Maven | Dependency Management |
+| Technology   | Usage                     |
+| ------------ | ------------------------- |
+| Java         | Backend Development       |
+| Spring Boot  | Application Framework     |
+| MySQL        | Database                  |
+| HTML/CSS     | Frontend UI               |
+| Bootstrap    | Responsive Design         |
+| Thymeleaf    | Server-Side Rendering     |
+| Maven        | Dependency Management     |
 
 ---
 
 ## 📌 Features
 
 - Add Student Records
-- Update Existing Data
+- Update Existing Student Data
 - Delete Student Entries
 - View All Students
-- Simple & User-Friendly Interface
-- Integrated Database Connectivity
+- Responsive & Clean User Interface
+- MySQL Database Connectivity
+- MVC-Based Backend Structure
+
+---
+## Demo
+<img width="2048" height="1135" alt="image" src="https://github.com/user-attachments/assets/d529fb2a-296e-4227-bb9d-9ac169a44df0" />
+<img width="2545" height="1421" alt="image" src="https://github.com/user-attachments/assets/8e40126f-32e9-4f07-8e59-4c749036d5c0" />
+<img width="2554" height="1423" alt="image" src="https://github.com/user-attachments/assets/fb38559d-f072-4377-9d2c-390c77cdf5d3" />
+<img width="2557" height="1419" alt="image" src="https://github.com/user-attachments/assets/84bfc7c4-a999-458b-b86c-bc692c523b75" />
+
+
+
 
 ---
 
@@ -60,13 +132,13 @@ Create a database:
 CREATE DATABASE student_management;
 ```
 
-Update credentials inside:
+Update database credentials inside:
 
 ```properties
 src/main/resources/application.properties
 ```
 
-Example:
+Example configuration:
 
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/student_management
@@ -76,7 +148,7 @@ spring.datasource.password=your_password
 
 ---
 
-### Run the Project
+### Run the Application
 
 ```bash
 mvn spring-boot:run
@@ -101,15 +173,16 @@ This project helped in understanding:
 - CRUD Operations
 - Database Connectivity
 - Backend Development Workflow
-- Full-Stack Application Structure
+- Full-Stack Project Structure
+- Repository & Service Layer Pattern
 
 ---
 
-## 🤝 Open to Contributions
+## 🤝 Contributions
 
 Contributions, suggestions, and improvements are welcome.
 
-Feel free to fork the repository and create pull requests.
+Feel free to fork the repository and submit pull requests.
 
 ---
 
